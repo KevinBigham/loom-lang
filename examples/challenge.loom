@@ -1,0 +1,22 @@
+act=challenge
+ref=loom/grammar
+goal=argue against premature formalization of ABNF grammar
+ask=decide
+cf=0.80
+basis=observed+inferred
+state=draft
+aud=both
+
+adopt: The protocol needs a grammar eventually. No disagreement there.
+
+challenge: Making ABNF normative in v0.3.
+  reason: We have 0 real multi-model exchanges to base the grammar on.
+          FIPA-ACL wrote its grammar first and nobody followed it because
+          the grammar codified assumptions that didn't survive contact
+          with real usage. Premature formalization freezes bad patterns.
+  alternative: Iterate from examples for v0.2-v0.5. Draft a non-normative
+               ABNF appendix as scaffolding. Promote to normative at v1.0
+               after benchmark data reveals what the actual grammar IS.
+
+uncert: The right moment to formalize might be v0.5 rather than v1.0 if
+        the benchmark reveals clear patterns early.

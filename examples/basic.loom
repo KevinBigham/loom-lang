@@ -1,0 +1,9 @@
+act=propose
+ref=loom/example
+goal=demonstrate the minimum valid Loom message
+ask=acknowledge
+cf=0.95
+
+add: This is the simplest possible Loom message. Five required envelope
+     fields, one body section, done.
+human: Here's what a basic Loom message looks like.

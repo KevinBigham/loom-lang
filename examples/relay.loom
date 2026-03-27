@@ -1,0 +1,16 @@
+act=respond
+ref=loom/naming
+goal=confirm agreement on protocol name
+ask=acknowledge
+cf=0.90
+prev=a1b2c3d4
+thread=loom-design
+route=Claude>Kevin>ChatGPT
+fidelity=paraphrase
+loss=original message included 3 examples; Kevin relayed only the conclusion
+lock=quote:1
+
+quote: The name "Loom" captures the idea of weaving threads of thought.
+adopt: The three-tier architecture is solid. Name fits the metaphor.
+change: Consider "Loom Protocol" instead of "Loom Core Protocol" for brevity.
+human: I agree with the name Loom. Maybe drop "Core" from the public-facing name.
