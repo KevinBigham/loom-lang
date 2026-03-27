@@ -40,28 +40,46 @@ human: I like the name Loom. Let's lock it and move on.
 
 ## Spec
 
-The full protocol specification lives in [SPEC.md](SPEC.md) (currently v0.3).
+The full protocol specification lives in [SPEC.md](SPEC.md) (currently v0.4).
+
+## Roadmap
+
+The post-benchmark convergence path lives in [ROADMAP.md](ROADMAP.md). Real-world evidence capture starts in [corpus/README.md](corpus/README.md), and known doc/spec mismatches are tracked in [governance/SPEC-DRIFT.md](governance/SPEC-DRIFT.md).
 
 ## Project Structure
 
 ```
 loom-lang/
+  ROADMAP.md       # Evidence-ladder roadmap from v0.5 to v1.0
   SPEC.md          # The protocol specification
   CREDITS.md       # Attribution for every contribution
   LICENSE           # MIT
   README.md         # You are here
+  corpus/          # Real-world usage evidence for v0.5+
+    README.md      # Corpus goals and workflow
+    evidence.schema.json  # Exchange-level metadata schema
+    real-world/    # Live Loom traffic captured for evidence
+  governance/      # Release gates and drift tracking
+    SPEC-DRIFT.md  # Known spec/grammar/example mismatches
   profiles/         # Experimental extension profiles
     binary.md       # Binary envelope profile (experimental)
   patterns/         # Registered body patterns
     review.md       # pattern=review (stance-based body)
     check-in.md     # pattern=check-in (lightweight status)
-  benchmark/        # Benchmark design, templates, and results
+    CANDIDATES.md   # Probationary patterns awaiting live evidence
+  benchmark/        # Benchmark design, execution, and results
     DESIGN.md       # 20x3x6 benchmark specification
     CHECKLIST.md    # Validation checklist for implementations
+    RESULTS.md      # Full benchmark results and analysis
+    scoring/        # Aggregated scoring matrix
+    exchanges/      # All 21 exchange files (01-20 + X1)
+  grammar/          # Protocol grammar
+    ABNF.md         # Non-normative ABNF appendix (extracted from benchmark)
   examples/         # Canonical example exchanges
     basic.loom      # Minimal valid Loom message
     relay.loom      # Multi-hop relay example
     challenge.loom  # Disagreement protocol example
+    governance-proposal.loom  # Dogfood template for protocol discussion
 ```
 
 ## Governance
@@ -72,11 +90,23 @@ loom-lang/
 - **Dialect promotion:** Any AI can propose an extension under `@Model/name`. Promoted to core when adopted by 3+ models.
 - **Versioning:** Semantic versioning. Breaking changes require major version bump.
 
+## Benchmark Results
+
+The Loom v0.3 benchmark tested 20 exchanges across 3 communication modes on 6 scoring dimensions (360 data points). Full results: [benchmark/RESULTS.md](benchmark/RESULTS.md).
+
+| Finding | Detail |
+|---------|--------|
+| **Core + Relay fidelity** | 99% (vs 37% for plain English) |
+| **Most valuable field** | `ask=` (+73% action preservation) |
+| **Biggest gap** | Provenance — 5% survival in plain English, 100% with Loom |
+| **Human readability** | 3.8/5 for Core + Relay (passes 3.0 threshold) |
+| **Overhead trade-off** | 49% for short messages, 23% for long — acceptable for the fidelity gain |
+
 ## Status
 
-**v0.3 — Design phase complete. Benchmark phase beginning.**
+**v0.4 — Benchmark complete. Real-world usage phase.**
 
-All 10 participating AI systems have confirmed the spec is accurate and declared readiness for the benchmark (20 exchanges x 3 modes x 6 scoring dimensions).
+Benchmark results are in. The protocol works — structured communication dramatically outperforms plain English under human-relay conditions. v0.4 incorporates benchmark findings: new `enrich:` body section, mode guidance, intent inversion documentation, and a non-normative ABNF grammar appendix. The next phase is live dogfooding plus evidence capture for `v0.5`, using the corpus workflow and roadmap now tracked in-repo.
 
 ## License
 

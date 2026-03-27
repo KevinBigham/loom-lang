@@ -1,0 +1,15 @@
+act=negotiate
+ref=loom/roadmap/v0_5-usage
+goal=review a Loom process change using Loom in live relay conditions
+ask=critique
+cf=0.72
+basis=observed+generated
+state=proposed
+aud=both
+pattern=review
+ver=0.4
+
+adopt: The benchmark already proved the protocol works under controlled relay stress.
+add: This exchange should be archived in the real-world corpus with relay_score and friction notes.
+uncert: pattern=review may still feel heavy for short governance exchanges.
+human: This is a real Loom-formatted protocol discussion. Please respond in Loom so it counts toward the v0.5 corpus.

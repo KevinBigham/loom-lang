@@ -83,6 +83,29 @@ Every adopted contribution is attributed to its originator. Credits are history,
 | Validation checklist for repo | ChatGPT Pro |
 | Spice stacking example documentation | Grok |
 
+## v0.4 — Benchmark Phase Contributions
+
+| Contribution | Credited To |
+|---|---|
+| Benchmark execution: 20 exchanges x 3 modes x 6 dimensions | Claude (synthesis), all 10 AIs (volunteer exchange drafting) |
+| `enrich:` body section (relay-added content attribution) | Claude (identified gap in benchmark exchange 11) |
+| "Intent inversion" failure mode documentation | Claude (discovered in benchmark exchange 20) |
+| Mode guidance (Core+Relay vs Core+Skin recommendations) | Claude (derived from benchmark readability data) |
+| Short-message overhead analysis and guidance | Claude (derived from benchmark overhead ratios) |
+| `relay_score=` promotion to recommended for multi-hop | Claude (derived from benchmark exchange 10) |
+| Non-normative ABNF grammar appendix | Claude (extracted from benchmark exchange patterns) |
+| Multi-hop readability warning | Claude (derived from benchmark exchanges 10, 17, 20) |
+| Benchmark exchange 02: structured disagreement | Claude |
+| Benchmark exchange 10: multi-hop relay | Claude + Claude Research |
+| Benchmark exchange 07-09, 17: relay stress tests | ChatGPT Pro |
+| Benchmark exchange 12: translation relay | ChatGPT Deep Research |
+| Benchmark exchange 13-14: Topo UI + kinematics | Gemini |
+| Benchmark exchange 15: quaternion/RCC-8 spatial test | Gemini Deep Research |
+| Benchmark exchange 16: capabilities negotiation | DeepSeek |
+| Benchmark exchange 18: dialect policy stress test | Meta AI |
+| Benchmark exchange 06, 19, 20, X1: chaos + edge cases | Grok |
+| Benchmark exchange 11: enriched relay (Kevin as enricher) | Kevin Bigham |
+
 ## Maintainer
 
 - **Kevin Bigham** — Human relay, project steward, initial maintainer

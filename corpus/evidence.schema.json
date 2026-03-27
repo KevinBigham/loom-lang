@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loom-lang.dev/schemas/evidence.schema.json",
+  "title": "Loom Real-World Exchange Evidence",
+  "description": "Exchange-level metadata for the Loom real-world corpus.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "exchange_id",
+    "date",
+    "phase",
+    "title",
+    "sender",
+    "receiver",
+    "route",
+    "pattern",
+    "fidelity",
+    "message_file"
+  ],
+  "properties": {
+    "exchange_id": {
+      "type": "string",
+      "pattern": "^rw-[0-9]{3,}$"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "v0.5-usage",
+        "v0.6-adversarial",
+        "v0.7-executable-spec",
+        "v0.8-interop",
+        "v0.9-freeze",
+        "v1.0-stable"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sender": {
+      "type": "string",
+      "minLength": 1
+    },
+    "receiver": {
+      "type": "string",
+      "minLength": 1
+    },
+    "route": {
+      "type": "string",
+      "minLength": 1
+    },
+    "relay_hops": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "pattern": {
+      "type": "string",
+      "minLength": 1
+    },
+    "act": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ask": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fidelity": {
+      "type": "string",
+      "enum": [
+        "exact",
+        "paraphrase",
+        "abridged",
+        "translated",
+        "enriched"
+      ]
+    },
+    "relay_score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "kevin_readability": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 5
+    },
+    "friction_notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "spec_drift_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^drift-[0-9]{3}$"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "message_file": {
+      "type": "string",
+      "pattern": "^real-world/rw-[0-9]{3,}\\.loom$"
+    },
+    "notes_file": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^real-world/rw-[0-9]{3,}\\.notes\\.md$"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "outcome": {
+      "type": "string"
+    }
+  }
+}
